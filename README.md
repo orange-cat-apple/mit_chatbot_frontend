@@ -48,3 +48,7 @@ To run the development server locally:
    npm run dev
 
 3. Open http://localhost:3000 in your browser to view the application.
+
+## Current Changes Needed (Next Steps)
+* **Placement Hub:** Develop the `src/app/placement/page.tsx` route to display relevant company and interview preparation information.
+* **Global Typography & Layout:** Fine-tune the Poppins font rendering and finalize the responsive behavior of the overall global layout shell.
