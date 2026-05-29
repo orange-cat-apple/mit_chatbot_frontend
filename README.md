@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Manipal Campus Assistant
 
-## Getting Started
+This repository contains the frontend architecture for the Manipal Campus Assistant, established during the Week 1 development phase. The application utilizes a modern, context-driven chat interface designed to assist students with university queries, placement preparation, and document study.
 
-First, run the development server:
+## Technology Stack
+* Framework: Next.js (App Router paradigm)
+* UI Library: React
+* Language: TypeScript
+* Styling: Tailwind CSS v3
+* Typography: Poppins (via next/font/google)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Current Architecture & File Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The project follows a component-driven architecture with modular routing for distinct campus features.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+mit_chatbot/
+├── public/
+│   ├── logo.png             
+│   └── profile.png          
+├── src/
+│   ├── app/
+│   │   ├── placement/       
+│   │   │   └── page.tsx     
+│   │   ├── globals.css      
+│   │   ├── layout.tsx       
+│   │   └── page.tsx         
+│   └── components/
+│       ├── ChatInput.tsx    
+│       └── Sidebar.tsx      
+├── tailwind.config.js       
+├── package.json             
+├── tsconfig.json            
+└── README.md                
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Design System
+* Primary Palette: Manipal Red (#ed1c24) and Manipal Orange (#f37021).
+* Interface Pattern: Collapsible history sidebar with a central, floating input console.
+* Background: Stateful, animated glassmorphism mesh gradient rendering via Tailwind keyframes.
 
-## Learn More
+## Development Setup
 
-To learn more about Next.js, take a look at the following resources:
+To run the development server locally:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Install dependencies:
+   npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Start the compiler:
+   npm run dev
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. Open http://localhost:3000 in your browser to view the application.
