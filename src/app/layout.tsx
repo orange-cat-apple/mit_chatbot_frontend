@@ -39,11 +39,6 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* Nav bar — trimmed to Home and Profile only */}
-        <nav className="bg-manipal-red text-white flex items-center px-6 gap-1 shrink-0 z-10 relative" style={{ height: '38px' }}>
-          <button className="hover:bg-white/10 transition-colors font-medium px-3 py-1.5 rounded text-xs">Home</button>
-          <button className="hover:bg-white/10 transition-colors font-medium px-3 py-1.5 rounded text-xs text-white/75">Profile</button>
-        </nav>
 
         <div className="flex-1 flex overflow-hidden relative">
           <Sidebar />
