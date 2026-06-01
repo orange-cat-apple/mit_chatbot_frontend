@@ -2,7 +2,7 @@ import ChatInput from '@/components/ChatInput';
 
 export default function Home() {
   return (
-    <main className="flex-1 relative flex flex-col h-full bg-slate-100 overflow-hidden">
+    <main className="flex-1 relative flex flex-col h-full bg-slate-100/30 overflow-hidden">
 
       {/* Main centred content */}
       <div className="flex-1 overflow-y-auto flex flex-col items-center justify-center px-8 z-10 relative">
