@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/Sidebar";
+import Link from "next/link";
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600'],
@@ -22,20 +23,34 @@ export default function RootLayout({
       <body className={`${poppins.className} flex flex-col h-screen bg-white m-0 p-0 overflow-hidden`}>
 
         {/* Top Header */}
-        <header className="bg-white flex items-center justify-between px-6 shrink-0 border-b border-gray-100 z-20 relative" style={{ height: '52px' }}>
-          <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #ed1c24, #f37021)' }}>
-              <span className="text-white font-semibold text-xs">M</span>
-            </div>
-            <span className="text-sm font-medium text-gray-400 tracking-wide">Manipal</span>
+        <header
+          className="flex items-center justify-between px-6 shrink-0 z-20 relative text-white shadow-md"
+          style={{
+            height: '60px',
+            backgroundColor: '#f37021'
+          }}
+        >
+          <div className="flex flex-col justify-center">
+            <h1 className="text-base font-semibold leading-tight tracking-wide text-white">
+              MIT Bengaluru Virtual Assistant
+            </h1>
+            <p className="text-[11px] text-white/80 font-light mt-0.5">
+              Empowered by AI &middot; Ask me anything
+            </p>
           </div>
-          <div className="flex items-center gap-3">
-            <button className="text-sm font-medium text-gray-500 hover:text-gray-800 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-full px-4 py-1.5 transition-colors">
-              Sign In
+          <div className="flex items-center gap-4">
+            <Link
+              href="/placement"
+              className="text-xs text-white border border-white/30 hover:border-white/50 hover:bg-white/10 rounded px-3 py-1.5 font-medium transition-all"
+            >
+              Placement Hub
+            </Link>
+            <button className="text-xs text-white border border-white/30 hover:border-white/50 hover:bg-white/10 rounded px-3 py-1.5 font-medium transition-all">
+              Manage Data
             </button>
-            <div className="w-7 h-7 rounded-full border border-orange-200 bg-orange-50 flex items-center justify-center text-xs font-medium text-manipal-orange cursor-pointer">
+            <button className="w-8 h-8 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/50 flex items-center justify-center text-sm font-semibold text-white transition-all cursor-pointer" title="Profile">
               S
-            </div>
+            </button>
           </div>
         </header>
 
