@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/components/Sidebar";
+import Link from "next/link";
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600'],
@@ -22,31 +22,53 @@ export default function RootLayout({
       <body className={`${poppins.className} flex flex-col h-screen bg-white m-0 p-0 overflow-hidden`}>
 
         {/* Top Header */}
-        <header className="bg-white flex items-center justify-between px-6 shrink-0 border-b border-gray-100 z-20 relative" style={{ height: '52px' }}>
-          <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ background: 'linear-gradient(135deg, #ed1c24, #f37021)' }}>
-              <span className="text-white font-semibold text-xs">M</span>
-            </div>
-            <span className="text-sm font-medium text-gray-400 tracking-wide">Manipal</span>
-          </div>
+        <header
+          className="flex items-center justify-between px-6 shrink-0 z-20 relative text-white shadow-md"
+          style={{
+            height: '60px',
+            backgroundColor: '#f37021'
+          }}
+        >
           <div className="flex items-center gap-3">
-            <button className="text-sm font-medium text-gray-500 hover:text-gray-800 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-full px-4 py-1.5 transition-colors">
-              Sign In
-            </button>
-            <div className="w-7 h-7 rounded-full border border-orange-200 bg-orange-50 flex items-center justify-center text-xs font-medium text-manipal-orange cursor-pointer">
-              S
+            <Link
+              href="/"
+              className="w-8 h-8 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/40 flex items-center justify-center transition-all"
+              title="Home"
+            >
+              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z" />
+              </svg>
+            </Link>
+            <div className="flex flex-col justify-center">
+              <h1 className="text-base font-semibold leading-tight tracking-wide text-white">
+                MIT Bengaluru Virtual Assistant
+              </h1>
+              <p className="text-[11px] text-white/80 font-light mt-0.5">
+                Empowered by AI &middot; Ask me anything
+              </p>
             </div>
+          </div>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/placement"
+              className="text-xs text-white border border-white/30 hover:border-white/50 hover:bg-white/10 rounded px-3 py-1.5 font-medium transition-all"
+            >
+              Placement Hub
+            </Link>
+            <Link
+              href="/data"
+              className="text-xs text-white border border-white/30 hover:border-white/50 hover:bg-white/10 rounded px-3 py-1.5 font-medium transition-all"
+            >
+              Manage Data
+            </Link>
+            <button className="w-8 h-8 rounded-full border border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/50 flex items-center justify-center text-sm font-semibold text-white transition-all cursor-pointer" title="Profile">
+              S
+            </button>
           </div>
         </header>
 
-        {/* Nav bar — trimmed to Home and Profile only */}
-        <nav className="bg-manipal-red text-white flex items-center px-6 gap-1 shrink-0 z-10 relative" style={{ height: '38px' }}>
-          <button className="hover:bg-white/10 transition-colors font-medium px-3 py-1.5 rounded text-xs">Home</button>
-          <button className="hover:bg-white/10 transition-colors font-medium px-3 py-1.5 rounded text-xs text-white/75">Profile</button>
-        </nav>
 
         <div className="flex-1 flex overflow-hidden relative">
-          <Sidebar />
           {children}
         </div>
       </body>
